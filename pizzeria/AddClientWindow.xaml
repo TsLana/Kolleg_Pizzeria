@@ -1,0 +1,15 @@
+﻿<Window x:Class="pizzeria.AddClientWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Новий клієнт" Style="{StaticResource WinStyleAddEdit}"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
+        <StackPanel>
+            <Label Content="Прізвище та ім'я:" FontSize="16" FontWeight="Bold" />
+            <TextBox Name="FullNameTextBox" Width="200" Height="25" FontSize="14"/>
+            <Label Content="Телефон:" FontSize="16" FontWeight="Bold" />
+            <TextBox Name="PhoneTextBox"  Width="200" Height="25" FontSize="14"/>
+            <Button Content="Зберегти" Click="SaveButton_Click" Margin="0 40 0 0" Style="{StaticResource btn}" />
+        </StackPanel>
+    </Grid>
+</Window>

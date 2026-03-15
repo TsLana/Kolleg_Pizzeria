@@ -1,0 +1,17 @@
+.vs/
+bin/
+obj/
+
+*.user
+*.suo
+*.log
+*.cache
+
+.vscode/
+
+Thumbs.db
+.DS_Store
+
+packages/
+TestResults/
+publish/

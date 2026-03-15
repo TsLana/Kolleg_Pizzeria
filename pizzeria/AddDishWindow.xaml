@@ -1,0 +1,42 @@
+﻿<Window x:Class="pizzeria.AddDishWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Додати страву" Style="{StaticResource WinStyleAdd}"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Назва страви:" Grid.Row="0" Style="{StaticResource TextBlock}"/>
+        <TextBox x:Name="DishNameTextBox" Grid.Row="1" Height="30" FontSize="14"/>
+
+        <TextBlock Text="Інгредієнти:" Grid.Row="2" Style="{StaticResource TextBlock}"/>
+        <TextBox x:Name="IngredientsTextBox" Grid.Row="3" Height="60" FontSize="14" AcceptsReturn="True" TextWrapping="Wrap"/>
+
+        <TextBlock Text="Ціна:" Grid.Row="4" Style="{StaticResource TextBlock}" Margin="0 20 0 0" VerticalAlignment="Center"/>
+        <TextBox x:Name="PriceTextBox" Grid.Row="4" Height="30" Width="150" Margin="60 20 0 0"  FontSize="14" HorizontalAlignment="Left"/>
+
+        <TextBlock Text="Кількість порцій на день:" Grid.Row="5" Style="{StaticResource TextBlock}" Margin="0 20 0 0" VerticalAlignment="Center"/>
+        <TextBox x:Name="ServingsTextBox" Grid.Row="5" Height="30" Width="100" Margin="200 20 0 0" FontSize="14" HorizontalAlignment="Left"/>
+
+        <TextBlock Text="Вага (грам):" Grid.Row="6" Style="{StaticResource TextBlock}" Margin="0 20 0 0"/>
+        <TextBox x:Name="WeightTextBox" Grid.Row="6" Height="30" Width="150"  Margin="100 20 0 0" FontSize="14" HorizontalAlignment="Left"/>
+
+        <TextBlock Text="Категорія:" Grid.Row="7" Style="{StaticResource TextBlock}" Margin="0 20 0 0"/>
+        <ComboBox x:Name="CategoryComboBox" Grid.Row="7" Height="30" Width="200"  Margin="90 20 0 0" FontSize="14" HorizontalAlignment="Left"/>
+
+        <StackPanel Grid.Row="8" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0">
+            <Button Content="Додати" Style="{StaticResource btn}" Click="AddButton_Click"/>
+            <Button Content="Відмінити" Style="{StaticResource btnOrange}" Click="CancelButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

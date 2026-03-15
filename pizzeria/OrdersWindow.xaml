@@ -1,0 +1,68 @@
+﻿<Window x:Class="pizzeria.OrdersWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Всі замовлення"  Style="{StaticResource WinStyle}"
+        WindowStartupLocation="CenterScreen"
+        Loaded="Window_Loaded">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+            <TextBlock Text="Сортування:" VerticalAlignment="Center" Margin="0,0,10,0" FontSize="14"/>
+            <ComboBox x:Name="FilterComboBox" Width="150" Height="30">
+                <ComboBoxItem Content="Дата ↑"/>
+                <ComboBoxItem Content="Дата ↓"/>
+                <ComboBoxItem Content="Сума ↑"/>
+                <ComboBoxItem Content="Сума ↓"/>
+            </ComboBox>
+            <Button Content="Застосувати" Click="ApplyFilter_Click" Style="{StaticResource btn}"/>
+
+            <TextBox x:Name="SearchTextBox" Width="200" Height="20" Margin="20,0,5,0" VerticalAlignment="Center"/>
+            <Button Content="Пошук" Width="80" Click="Search_Click" Style="{StaticResource btn}" />
+        </StackPanel>
+
+        <DataGrid x:Name="OrdersDataGrid" Grid.Row="1" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" FontSize="14">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Дата і час" Binding="{Binding DateTimeFormatted}" Width="140"/>
+                <DataGridTemplateColumn Header="Склад замовлення" Width="200">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding OrderDetails}" TextWrapping="Wrap" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Клієнт"  Width="180">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding ClientName}" TextWrapping="Wrap" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Тип замовлення" Binding="{Binding OrderType}" Width="160"/>
+                <DataGridTextColumn Header="Статус" Binding="{Binding OrderStatus}" Width="160"/>
+                <DataGridTemplateColumn Header="Адреса" Width="180">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding ClientAddress}" TextWrapping="Wrap"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Телефон" Binding="{Binding PhoneForDisplay}" Width="*"/>
+                <DataGridTextColumn Header="Сума" Binding="{Binding TotalAmount, StringFormat=N2}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,10,0,0">
+            <Button Content="На головний" Click="BackToMain_Click" Style="{StaticResource btnOrange}"/>
+            <Button Content="Додати" Click="AddOrder_Click" Style="{StaticResource btn}"/>
+            <Button Content="Редагувати" Click="EditOrder_Click" Style="{StaticResource btn}"/>
+            <Button Content="Видалити" Click="DeleteOrder_Click" Style="{StaticResource btn}"/>
+        </StackPanel>
+
+        <TextBlock x:Name="TotalSumTextBlock" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" Margin="0,10,10,0"/>
+    </Grid>
+</Window>

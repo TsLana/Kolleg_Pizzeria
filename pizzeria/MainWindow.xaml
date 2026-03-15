@@ -1,0 +1,34 @@
+﻿<Window x:Class="pizzeria.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:pizzeria"
+        mc:Ignorable="d"
+        Title="Головна панель" Style="{StaticResource WinStyle}"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="20">
+        <StackPanel>
+            
+            <TextBlock x:Name="WelcomeTextBlock" FontSize="28" FontWeight="Bold"
+                       HorizontalAlignment="Center" Margin="0,0,0,20" />
+
+           
+            <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,140,0,0">
+                <Button Content="🍕 Замовлення" Click="OrdersButton_Click" Style="{StaticResource MainBtn}"/>
+
+                <Button Content="📋 Меню" Click="MenuButton_Click"  Style="{StaticResource MainBtn}"/>
+
+                <Button Content="👤 Клієнти" Click="ClientsButton_Click" Style="{StaticResource MainBtn}"/>
+
+                <Button Content="🧑‍💼 Співробітники" Click="EmployeesButton_Click"  Style="{StaticResource MainBtn}"/>
+
+
+                <Button Content=" Вийти" Click="LogoutButton_Click" Style="{StaticResource MainBtn}" Background="#FF585449" Foreground="Black"/>
+            </WrapPanel>
+
+            
+            
+        </StackPanel>
+    </Grid>
+</Window>

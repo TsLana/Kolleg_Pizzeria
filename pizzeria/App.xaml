@@ -1,0 +1,72 @@
+﻿<Application x:Class="pizzeria.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:pizzeria"
+             StartupUri="LoginWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <LinearGradientBrush x:Key="WindowBackgroundBrush" StartPoint="0.5,0" EndPoint="0.5,1">
+                <GradientStop Color="#FFB5870A" Offset="0"/>
+                <GradientStop Color="#FFB1B1B1" Offset="0.437"/>
+                <GradientStop Color="White" Offset="0.902"/>
+            </LinearGradientBrush>
+
+            <Style x:Key="WinStyle" TargetType="Window">
+                <Setter Property="Width" Value="1250"/>
+                <Setter Property="Height" Value="700"/>
+                <Setter Property="Background" Value="{StaticResource WindowBackgroundBrush}"/>
+            </Style>
+
+            <Style x:Key="WinStyleAdd" TargetType="Window">
+                <Setter Property="Width" Value="650"/>
+                <Setter Property="Height" Value="600"/>
+                <Setter Property="Background" Value="{StaticResource WindowBackgroundBrush}"/>
+            </Style>
+
+            <Style x:Key="WinStyleAddEdit" TargetType="Window">
+                <Setter Property="Width" Value="300"/>
+                <Setter Property="Height" Value="300"/>
+                <Setter Property="Background" Value="{StaticResource WindowBackgroundBrush}"/>
+            </Style>
+
+            <Style x:Key="MainBtn" TargetType="Button">
+                <Setter Property="Width" Value="300"/>
+                <Setter Property="Height" Value="90"/>
+                <Setter Property="Margin" Value="10"/>
+                <Setter Property="Background" Value="#FFB5870A"/>
+                <Setter Property="Foreground" Value="Black"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="FontSize" Value="26"/>
+            </Style>
+
+            <Style x:Key="btn" TargetType="Button">
+                <Setter Property="Width" Value="120"/>
+                <Setter Property="Height" Value="30"/>
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="Background" Value="#FF736B59"/>
+                <Setter Property="Foreground" Value="Black"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="FontSize" Value="14"/>
+            </Style>
+
+            <Style x:Key="btnOrange" TargetType="Button">
+                <Setter Property="Width" Value="120"/>
+                <Setter Property="Height" Value="30"/>
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="Background" Value="#FFB5870A"/>
+                <Setter Property="Foreground" Value="Black"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="FontSize" Value="14"/>
+            </Style>
+
+
+            <Style x:Key="TextBlock" TargetType="TextBlock">
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="Margin" Value="5"/>
+            </Style>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
